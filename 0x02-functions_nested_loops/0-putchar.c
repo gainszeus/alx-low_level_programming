@@ -1,12 +1,21 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main - prints _putchar with a new line
+ * main - Prints _putchar
  *
- * result: always 0 (success)
+ * Return: always 0
  */
 int main(void)
 {
-	printf("_putchar\n");
+	_putchar("_");
+	_putchar("p");
+	_putchar("u");
+	_putchar("t");
+	_putchar("c");
+	_putchar("h");
+	_putchar("a");
+	_putchar("r");
+	putchar('\n');
 	return (0);
-}
+
