@@ -2,18 +2,15 @@
 #include <stdio.h>
 
 /**
- * main - print a to z in lower case
+ * print_alphabet - print a to z
  *
- * return: 0 always (s
+ * return: 0
  */
-int main(void)
+void print_alphabet(void)
 {
 	char i;
 
 	for (i = 'a'; i <= 'z'; i++)
-	{
-		putchar(i);
-	}
-	putchar('\n');
-	return (0);
+		_putchar(i);
+	_putchar('\n');
 }
