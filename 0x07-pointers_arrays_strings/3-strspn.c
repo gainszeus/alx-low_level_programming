@@ -1,23 +1,34 @@
 #include "main.h"
 
 /**
- * _strchr - get char in a string
- * @c: occurence of char
- * @s: the string
+ * _strspn - Gets the length of a prefix substring.
+ * @s: The string to be searched.
+ * @accept: The prefix to be measured.
  *
- * Return: s or NULL
+ * Return: The number of bytes in s which
+ *         consist only of bytes from accept.
  */
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
+	unsigned int bytes = 0;
+	int index;
+
 	while (*s)
 	{
-		if (*s != c)
-			s++;
-		else
-			return (s);
-	}
-	if (c == '\0')
-		return (s);
+		for (index = 0; accept[index]; index++)
+		{
+			if (*s == accept[index])
+			{
+				bytes++;
+				break;
+			}
 
-	return (NULL);
+			else if (accept[index + 1] == '\0')
+				return (bytes);
+		}
+
+		s++;
+	}
+
+	return (bytes);
 }
