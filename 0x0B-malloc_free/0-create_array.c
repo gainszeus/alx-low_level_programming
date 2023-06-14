@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+
 /**
  * *create_array - function to create an array
  * @size: array size to allocate
@@ -11,21 +13,11 @@ char *create_array(unsigned int size, char c)
 	unsigned int i;
 	char *myArray;
 
-	if (size == 0)
+	myArray = malloc(sizeof(char) * size);
+	if (size == 0 || myArray == NULL)
 		return (NULL);
 
-	myArray = malloc(size * sizeof(char));
-	if (myArray == NULL)
-		exit(1);
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size;  i++)
 		myArray[i] = c;
-
-	if (myArray != NULL)
-	{
-		return (myArray);
-	}
-	else
-	{
-		return (NULL);
-	}
+	return (myArray);
 }
